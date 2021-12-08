@@ -3,6 +3,7 @@ const path = require('path')
 
 console.log(path.sep)
 
+//basically .join and .resolve do the same thing, just dont get confused 
 const filePath = path.join('content','shine' , 'text.txt')
 console.log(filePath)
 

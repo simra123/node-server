@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Custom styles file -->
+    <link href="stylesheet.css" rel="stylesheet" />
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fontawesome code -->
+
+    <!-- pages title -->
+    <title>Ayesha Zia Mua</title>
+</head>
+
+<body>
+   
+    <!-- Navbar ends here   -->
+
+ <!-- contact us banner img -->
+
+   <!-- Adress and certificates -->
+  <div id="contact" class="container-sm">
+        <div class="row">
+            
+   
+
+            <!-- input forms -->
+            <div class="col-md-6 ">
+                <h3>js axios form</h3>
+                <p id="alert"> </p>
+                <form >
+                    <!-- name -->
+                    <div  class="form-group">
+                      <label for="name">name</label>
+                      <input type="name" name="name"
+                      autocomplete="off"
+                       class="form-control" id="name">
+                    </div>
+                  
+                    <button id="submit" class="btn btn-ouline-dark" >Send</button>
+                </form>
+                <div id="result"></div>
+                  <!-- Input forms ends here -->
+               
+            </div>
+            <div class="col-md-6 ">
+                <h3>basic form login</h3>
+                <form method="POST" action="/login" >
+                    <!-- name -->
+                    <div  class="form-group">
+                      <label for="login">login</label>
+                      <input type="text" name="login"
+                      autocomplete="off"
+                       class="form-control" id="login">
+                    </div>
+                  
+                    <button id="submit" class="btn btn-ouline-dark" >Send</button>
+                </form>
+                  <!-- Input forms ends here -->
+               
+            </div>
+        </div> 
+       
+            <!-- certificates end here -->
+    </div>    
+           
+           
+
+     <!-- custom js file -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+    <!-- Bootstrap javascript -->
+    <script >
+   //here we get the data from get request to print it in our frontend
+    const result = document.getElementById('result')
+   
+    const fetchName = async() => {
+        try {
+            const {data} = await axios.get('/api/people')
+          
+            //data 2 times cause axios gives a big ass object
+            const people = data.data.map((person)=>{
+                console.log(person)
+                return `<h6> ${person.name}</h6>`
+            })
+            result.innerHTML = people.join('')
+        } catch (error) {
+            result.innerHTML =  'can not fetch data!!'
+        }
+    }
+    fetchName()
+ 
+
+    //form submit 
+    const input = document.getElementById('name')
+    const btn = document.getElementById('submit')
+    const alert = document.getElementById('alert')
+    btn.addEventListener('click', async(e)=>{
+       e.preventDefault()
+        const nameValue = input.value
+        //here we post our data from frontend to server
+        try {
+            const {data} = await axios.post('/api/people' ,
+            {name : nameValue})
+            console.log(data)
+            //and also fetching the posted data in frontend
+            const h5 = document.createElement('h5')
+            //person is the if true response message we coded in bkend file "axios post"
+            h5.textContent = data.person
+            result.appendChild(h5)
+            input.value = ''
+            
+        } catch (error) {
+            //data.msg is also an error msg gwe have setted up in our backend
+            alert.innerHTML = error.response.data.msg
+            console.log(error)
+        }
+    })
+    </script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>    
