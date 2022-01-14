@@ -4,8 +4,11 @@ const tasks = require('./routes/task')
 const connecDB = require('./db/connect')
 const notFound = require('./middeware/notFound')
 const errorHandler = require('./middeware/error-handler')
+const cors = require('cors')
 require('dotenv').config()
 const port = 5000
+
+app.use(cors())
 //getting the data from frontapp
 app.use(express.urlencoded({ extended: false }))
 
