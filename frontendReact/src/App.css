@@ -103,3 +103,14 @@ outline: none;
   font-size: 10px;
   margin-bottom: 15px;
 }
+@media screen and (max-width:900px) {
+  .center-div{
+    width:40% !important
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .center-div{
+    width:90% !important
+  }
+}
