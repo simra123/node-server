@@ -1,47 +1,45 @@
-const bubbleSort = (arr) => {
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length; j++) {
-            if (arr[j] > arr[j + 1]) {
-                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
-            }
-        }
-    }
-    return arr
-}
-console.log(bubbleSort([10, 3, 7, 9, 20, 46, 2, 1]))
+// const array = [1, 33, 44, 55, 33, 44, 2]
 
-//reverse string
-const reverse = (str) => {
-    let newS = ""
-    for (let i = str.length - 1; i >= 0; i--) {
-        newS += str[i]
-    }
-    return newS
-}
+// const removeDuplicates = array.filter((value, index, arr) => arr.indexOf(value) == index)
+// console.log(removeDuplicates)
 
-console.log(reverse('hello world'))
+// const findMax = (arr) => {
+//     let max = arr[0]
+//     for (i = 0; i <= arr.length; i++) {
+//         if (max < arr[i]) {
+//             max = arr[i]
+//         }
+//     }
+//     return max
+// }
+// console.log(findMax([1, 33, 44, 55, 33, 44, 2]))
 
-array = [2, 5, 7, 3, 7, 30]
+// let a = 6
+// let b = 9
+// a = b + a
+// b = a - b
+// a = a - b
+// console.log(`a is ${ a } and b is ${ b }`)
 
-const a = array.reduce((initial, current) => {
-    return initial + current
-}, 0)
-console.log(a)
+// const findMissing = (arr) => {
+//     let c = 0
+//     let list = []
+//     for (i = arr[0]; i <= 10; i++) {
+//         if (arr[c] == i) {
+//             c++
+//         }
+//         else {
+//             list = [...list, i]
+//         }
+//     }
+//     return list
+// }
+// console.log(findMissing([1, 3, 4, 5, 6, 7, 10]))
+const myDate = new Date("2022-07-18T22:00:31.783Z")
+myDate.setMinutes(myDate.getMinutes() + 1)
+// function addMinutes(numOfMinutes, date) {
+//   date.setMinutes(date.getMinutes() + numOfMinutes)
 
-//seleton sort 
-//2, 3, 4, 7, 5
-const seletonSort = (arr) => {
-    let minIndex
-    for (let i = 0; i < arr.length - 1; i++) {
-        minIndex = i //0 , 1
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[minIndex] > arr[j]) { // 3 > 2
-                minIndex = j
-            }
-            [arr[minIndex], arr[i]] = [arr[i], arr[minIndex]]
-        }
-    }
-    return arr
-}
-console.log(seletonSort([2, 5, 7, 342, 78, 76, 3, 2, 1, -7, 2, -6666]))
-
+//   return date
+// }
+console.log(myDate)

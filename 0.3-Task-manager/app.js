@@ -7,7 +7,7 @@ const errorHandler = require('./middeware/error-handler')
 const cors = require('cors')
 require('dotenv').config()
 const port = 5000
-
+//--unhandled-rejections=strict
 app.use(cors())
 //getting the data from frontapp
 app.use(express.urlencoded({ extended: false }))
