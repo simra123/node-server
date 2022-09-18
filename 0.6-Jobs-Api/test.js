@@ -45,9 +45,9 @@
 // }
 // console.log(seletonSort([2, 5, 7, 342, 78, 76, 3, 2, 1, -7, 2, -6666]))
 
- const addMinute = (numOfMinutes, date) => {
+const addMinute = (numOfMinutes, date) => {
 	date.setMinutes(date.getMinutes() + numOfMinutes);
 
 	return date;
-}
-console.log(addMinute(1 , new Date("2022-07-18T12:09:47.732Z")))
+};
+console.log(addMinute(1, new Date("2022-07-18T12:09:47.732Z")));

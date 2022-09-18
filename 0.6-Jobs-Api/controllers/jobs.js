@@ -1,7 +1,7 @@
 const Jobs = require('../models/jobs')
 const { StatusCodes } = require('http-status-codes')
 const { BadRequest, NotFound } = require('../errors')
-
+//--unhandled-rejections=strict
 const getAllJobs = async (req, res) => {
     const jobs = await Jobs.find({ createdBy: req.Users.name }).sort('createdAt')
     res.status(StatusCodes.OK).json({ jobs, count: jobs.length })
@@ -44,6 +44,9 @@ const deleteJob = async (req, res, next) => {
     const jobs = await Jobs.findOneAndDelete({ _id: id, createdBy: name })
     if (!jobs) {
         return next(new NotFound(`No job was found with the id of ${ id }`))
+    }
+    else{
+        console.log('error')
     }
     res.status(StatusCodes.OK).json({ jobs, count: jobs.length, success: true, msg: "deleted job ", })
 
