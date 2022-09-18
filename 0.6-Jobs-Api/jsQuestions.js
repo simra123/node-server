@@ -14,9 +14,8 @@
 // //qucik find max
 // let arr = [2, 5, 6, 8, 1, 5, 7,]
 
-// //console.log(f[arra.length - 1])
-
-// //find max 
+// //console.log(f[arra.length -
+// //find max
 // const findMax = (arr) => {
 //     let max = arr[0]
 //     for (let i = 0; i < arr.length; i++) {
@@ -30,7 +29,7 @@
 // }
 // //console.log(findMax([7, 2, 4, 7, 9, 1, 3, 5, 2, 9, 44, 11, 33, 2, 4, 5]))
 
-// //swaping using temp 
+// //swaping using temp
 // let temp;
 // let e = 2
 // let b = 4
@@ -38,7 +37,7 @@
 // b = e
 // e = temp
 // //console.log(e, b)
-// //swaping without temp 
+// //swaping without temp
 // let z = 8
 // let f = 2
 // z = z - f //6
@@ -46,7 +45,7 @@
 // z = f - z //2
 // //console.log(z, f)
 
-// //bubble sort 
+// //bubble sort
 // const sortArr = (arr) => {
 //     for (let i = 0; i < arr.length; i++) {
 //         for (let j = 0; j < arr.length; j++) {
@@ -61,7 +60,7 @@
 // }
 // //console.log(sortArr([7, 2, 4, 7, 9, 1, 3, 5, 2, 9, 44, 11, 33, 2, 4, 5]))
 
-// //selection sort 
+// //selection sort
 // const selectionSort = (arr) => {
 //     const array = arr.slice() // to avoid mutable approach ..slice creates a new array
 //     let minIndex;
@@ -157,9 +156,21 @@
 // }
 // console.log(reverseS('hello world'))
 //6, 4, 3, 1, 5
-const insertionSort = (arr) => {
-    let temp
-    for (let i = 0; i < arr.length; i++) {
-        let
-    }
-}
+
+const a = [56, 3, 2, 5, , 4, 2, 1];
+
+const findMin = (arr) => {
+	let min = arr[0];
+	let count = 0;
+	for (let i = 1; i < arr.length; i++) {
+		count++;
+		if (min > arr[i]) {
+			min = arr[i];
+		}
+	}
+	console.log(count);
+
+	return min;
+};
+
+console.log(findMin([3, 2, 5, 4, 2, 1]));
