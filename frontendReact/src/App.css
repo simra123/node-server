@@ -6,6 +6,7 @@
 body {
   font-family: poppins;
 }
+
 .main-div {
   height: 100vh;
   width: 100%;
@@ -17,7 +18,17 @@ body {
   justify-content: center;
   position: relative;
 
-} 
+}
+.dark-theme{
+  background-color: rgba(99, 94, 94, 0.305) !important; 
+  box-shadow: 7px 5px 24px rgba(0, 0, 0, 0.493);
+  width: 25%;
+  height: 80vh;
+  border-radius: 10px;
+  overflow-y: scroll;
+
+
+}
 .main-div .alerts{
   position: absolute;
   top: 0;
@@ -33,12 +44,12 @@ body {
     
 }
 .center-div h1 {
-  background-color: rgba(231, 8, 8, 0.486);
+  background-color: rgb(243 135 135);
   margin: 20px  0px;
 }
 .center-div input{
   border: 0 !important;
-  border-bottom: 3px solid rgba(231, 8, 8, 0.486) !important;
+  border-bottom: 3px solid rgb(243 135 135) !important;
   background-color: transparent;
   font-size: 20px;
   letter-spacing: 1px;
@@ -48,12 +59,12 @@ outline: none;
 }
 .center-div i {
   margin: 0px 10px;
-  color:rgba(231, 8, 8, 0.486);
+  color:rgb(243 135 135);
   font-size: 32px;
   
 }
 .center-div i:hover {
-  color: rgba(231, 8, 8, 0.486);
+  color: rgb(243 135 135);
 }
 
 .center-div p{
@@ -91,7 +102,7 @@ outline: none;
 .todocomp i {
   font-size: 20px;
   margin: 3px 8px;
-  color:rgba(231, 8, 8, 0.486)
+  color:rgb(243 135 135)
 }
 .todocomp i:hover{
   color: red;

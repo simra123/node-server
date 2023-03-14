@@ -45,9 +45,12 @@
 // }
 // console.log(seletonSort([2, 5, 7, 342, 78, 76, 3, 2, 1, -7, 2, -6666]))
 
-const addMinute = (numOfMinutes, date) => {
-	date.setMinutes(date.getMinutes() + numOfMinutes);
+const prompt = require("prompt-sync")({ sigint: true });
+const endingPoint = prompt("enter your ending point of tables: ");
+const tablelength = prompt("enter tables ending length: ");
 
-	return date;
-};
-console.log(addMinute(1, new Date("2022-07-18T12:09:47.732Z")));
+for (i = 2; i <= endingPoint; i++) {
+	for (j = 1; j <= tablelength; j++) {
+		console.log(`${i} x ${j} = ${i * j} `);
+	}
+}
